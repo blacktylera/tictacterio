@@ -17,6 +17,11 @@ $(document).ready (function() {
         }
     });
 
+    $(".newGame").click(function() {
+        location.reload();
+        turnCount = 0;
+    });
+
 
 
     var fb = new Firebase('https//tictacterio.firebaseio.com/');

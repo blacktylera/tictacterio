@@ -1,6 +1,22 @@
 $(document).ready (function() {
-    var turnCount=0;
+    var turnCount=0,
+        board = [['', '', ''], ['', '', ''], ['', '', '']],
+        state = board;
 
+    drawBoard(board);
+    ///this does draw a board, but the board that get drawn is not functioning as an interactive board yet//
+
+    function drawBoard(boardArray) {
+      var $table = $('<table class="game_board table-bordered"></table>');
+      boardArray.forEach(function(row) {
+        var $row = $('<tr></tr>');
+        row.forEach(function(cell){
+          $row.append('<td>'+ cell +'</td>');
+        });
+        $table.append($row);
+      });
+      $('.container').append($table);
+    };
     // $('#board').on('click', '.td', function(this){console.log(this)})
 
     $('#board').find('td').on('click', function() {

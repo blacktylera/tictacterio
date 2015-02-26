@@ -1,64 +1,116 @@
-'use strict';
 
-function hello () {
-  return "world";
-}
+$(document).ready(function() {
+    var turnCount=0;
 
+    $('#board').find('td').on('click', function(){
+        if (turnCount % 2 === 0){
+          $(this).append('<img src="http://i.imgur.com/XeBK7pI.gif" height="100px" width="100px">');
+          didYouWin('Terio 1');
+        } else {
+          $(this).append('<img src="https://38.media.tumblr.com/62583bc8883ed07b8e201219314b8773/tumblr_mu9v89AwEN1ssjkcoo1_400.gif" height="100px" width="100px">');
+          didYouWin('Terio 2');
+        }
+      turnCount++;
+    });
 
-var fb = new Firebase('https//tictacterio.firebaseio.com/'),
-    possibilities;
-
-
-//FUNCTION THAT CHECK IF THE DESIRED ELEMENT SPACE IS AVAILABLE //
-     //call it  spaceOccupyCheck//
-     function spaceOccupyCheck() {
-         //alert player if a 'data-move type thing exists. PICK ANOTHER SPACE'
-         if("there's no attribute that's been attached") {
-           proceed with the  move, else, alert!!
-         }
-
-     }
-
-//FUNCTION THAT DISPLAYS THE ICON ON THE SELECTED ELEMENT//
-     //call it  playerMove //
-     function playerMove($this, move) {
-        $this.attr('data-move', move);
-        $this.addClass(move);
-     }
-     
-//FUNCTION THAT ADDS THE ATTRIBUTE THAT TELLS TWO THINGS: the player occupying space, and which space has been occupied//
-     //call it 
-
-//FUNCTION THAT CHECKS FOR A WINNER//
-     //call it didYouWin
-
-//
+    var fb = new Firebase('https//tictacterio.firebaseio.com/');
 
 
-//ON CLICK,
-$('*td grid thing*').on('click', function () {
+    function didYouWin(player){
+    //top row check
+        if ($('#board').find('#td1').append() !== null){
+            if ($('#board').find('#td1').append() === $('#board').find('td#2').append()) {
+                if ($('#board').find('#td1').append() === $('#td3').append()) {
+                    alert('Game over! '+player+' is the winner!');
+                    $('#newGame').removeClass('invisible');
+                }
+            }
+        }
+    //left column check
+        if ($('#board').find('#td1').append() === $('#board').find('#td4').append()) {
+            if ($('#board').find('#td1').append() === $('#td7').append()) {
+                alert('Game over! '+player+' is the winner!');
+                $('#newGame').removeClass('invisible');
+            }
+        }
+    //left diagonal check
+        if ($('#board').find('#td1').append() === $('#board').find('#td5').append()) {
+            if ($('#board').find('#td1').append() === $('#td9').append()) {
+                alert('Game over! '+player+' is the winner!');
+                $('#newGame').removeClass('invisible');
+            }
+        }
+    //middle column check
+    if ($('#board').find('#td2').append() !== null){
+        if ($('#board').find('#td2').append() === $('#board').find('#td5').append()) {
+            if ($('#board').find('#td2').append() === $('#td8').append()) {
+                alert('Game over! '+player+' is the winner!');
+                $('#newGame').removeClass('invisible');
+            }
+        }
+    }
 
-  console.log('terio is coming!');
-  if (spaceOccupyCheck($this)) {
-    playerMove($(this), 'move-x');
-    count++;
-    didYouWin();
-  }
+    //right column check
+    if ($('#board').find('#td3').append() !== null){
+        if ($('#board').find('#td3').append() === $('#board').find('#td6').append()) {
+            if ($('#board').find('#td3').append() === $('#td9').append()) {
+                alert('Game over! '+player+' is the winner!');
+                $('#newGame').removeClass('invisible');
+            }
+        }
+    }
+        //right diag check
+        if ($('#board').find('#td3').append() === $('#board').find('#td5').append()) {
+            if ($('#board').find('#td3').append() === $('#td7').append()) {
+                alert('Game over! '+player+' is the winner!');
+                $('#newGame').removeClass('invisible');
+            }
+        }
+    }
 
+    //middle row check
+
+    if ($('#board').find('#td4').append() !== null){
+        if ($('#board').find('#td4').append() === $('#board').find('#td5').append()) {
+            if ($('#board').find('#td4').append() === $('#td6').append()) {
+                alert('Game over! '+player+' is the winner!');
+                $('#newGame').removeClass('invisible');
+            }
+        }
+    }
+
+    //bottom row check
+    if ($('#board').find('#td7').append() !== null){
+        if ($('#board').find('#td7').append() === $('#board').find('#td8').append()) {
+            if ($('#board').find('#td7').append() === $('#td9').append()) {
+                alert('Game over! '+player+' is the winner!');
+                $('#newGame').removeClass('invisible');
+            }
+        }
+    }
+
+    $('#newGame').on('click',function(){
+        $('.square').append('');
+    });
 });
 
-//if you win, show a gif//
 
 
-//adds that the player has taken the turn
-//gives the turn to the other player
-var possibilities = [
-                     [ 1, 2, 3 ],
-                     [ 4, 5, 6 ],
-                     [ 7, 8, 9 ],
-                     [ 1, 4, 7 ],
-                     [ 2, 5, 8 ],
-                     [ 1, 5, 9 ],
-                     [ 7, 5, 3 ]
-                    ];
+// // //FUNCTION THAT CHECK IF THE DESIRED ELEMENT SPACE IS AVAILABLE //
+// //      //call it  spaceOccupyCheck//
+// //      function spaceOccupyCheck() {
+// //          //alert player if a 'data-move type thing exists. PICK ANOTHER SPACE'
+// //          if("there's no attribute that's been attached") {
+// //            proceed with the  move, else, alert!!
+// //          }
+
+// // var possibilities = [
+// //                      [ 1, 2, 3 ],
+// //                      [ 4, 5, 6 ],
+// //                      [ 7, 8, 9 ],
+// //                      [ 1, 4, 7 ],
+// //                      [ 2, 5, 8 ],
+// //                      [ 1, 5, 9 ],
+// //                      [ 7, 5, 3 ]
+// //                     ];
 

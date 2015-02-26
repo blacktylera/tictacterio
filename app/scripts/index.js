@@ -1,17 +1,23 @@
-
-$(document).ready(function() {
+$(document).ready (function() {
     var turnCount=0;
 
-    $('#board').find('td').on('click', function(){
-        if (turnCount % 2 === 0){
-          $(this).append('<img src="http://i.imgur.com/XeBK7pI.gif" height="100px" width="100px">');
-          didYouWin('Terio 1');
-        } else {
-          $(this).append('<img src="https://38.media.tumblr.com/62583bc8883ed07b8e201219314b8773/tumblr_mu9v89AwEN1ssjkcoo1_400.gif" height="100px" width="100px">');
-          didYouWin('Terio 2');
+    $('#board').find('td').on('click', function() {
+        if(!$(this).html()) {
+            if (turnCount % 2 === 0){
+                $(this).append('<img src="http://i.imgur.com/XeBK7pI.gif" height="100px" width="100px">');
+                 didYouWin('Terio 1');
+                 turnCount++;
+            } 
+            else {
+                $(this).append('<img src="https://38.media.tumblr.com/62583bc8883ed07b8e201219314b8773/tumblr_mu9v89AwEN1ssjkcoo1_400.gif" height="100px" width="100px">');
+                turnCount++;
+                didYouWin('Terio 2');
+
+            }
         }
-      turnCount++;
     });
+
+
 
     var fb = new Firebase('https//tictacterio.firebaseio.com/');
 

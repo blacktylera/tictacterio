@@ -28,6 +28,7 @@ $(document).ready (function() {
         if(!$(this).html()) {
             if (turnCount % 2 === 0){
                 $(this).append(x);
+
                 $(this).val('x');
                 didYouWin('Terio 1');
                 turnCount++;
@@ -49,12 +50,62 @@ $(document).ready (function() {
 
 
     function didYouWin(player){
-        if ($('#board').find('#td1').val() === 'x' &&
+      if ($('#board').find('#td1').val() === 'x' &&
             $('#board').find('#td2').val() === 'x' &&
-            $('#board').find('#td3').val() === 'x'){
+            $('#board').find('#td3').val() === 'x' ||
+            $('#board').find('#td4').val() === 'x' &&
+            $('#board').find('#td5').val() === 'x' &&
+            $('#board').find('#td6').val() === 'x' ||
+            $('#board').find('#td7').val() === 'x' &&
+            $('#board').find('#td8').val() === 'x' &&
+            $('#board').find('#td9').val() === 'x' ||
+            $('#board').find('#td1').val() === 'x' &&
+            $('#board').find('#td4').val() === 'x' &&
+            $('#board').find('#td7').val() === 'x' ||
+            $('#board').find('#td2').val() === 'x' &&
+            $('#board').find('#td5').val() === 'x' &&
+            $('#board').find('#td8').val() === 'x' ||
+            $('#board').find('#td1').val() === 'x' &&
+            $('#board').find('#td5').val() === 'x' &&
+            $('#board').find('#td9').val() === 'x' ||
+            $('#board').find('#td7').val() === 'x' &&
+            $('#board').find('#td5').val() === 'x' &&
+            $('#board').find('#td3').val() === 'x' ||
+            $('#board').find('#td3').val() === 'x' &&
+            $('#board').find('#td6').val() === 'x' &&
+            $('#board').find('#td9').val() === 'x'){
+                alert('OOO Kill Em! '+player+' wins!');
+                $('#newGame').removeClass('invisible');
+    }
+        if ($('#board').find('#td1').val() === 'o' &&
+            $('#board').find('#td2').val() === 'o' &&
+            $('#board').find('#td3').val() === 'o' ||
+            $('#board').find('#td4').val() === 'o' &&
+            $('#board').find('#td5').val() === 'o' &&
+            $('#board').find('#td6').val() === 'o' ||
+            $('#board').find('#td7').val() === 'o' &&
+            $('#board').find('#td8').val() === 'o' &&
+            $('#board').find('#td9').val() === 'o' ||
+            $('#board').find('#td1').val() === 'o' &&
+            $('#board').find('#td4').val() === 'o' &&
+            $('#board').find('#td7').val() === 'o' ||
+            $('#board').find('#td2').val() === 'o' &&
+            $('#board').find('#td5').val() === 'o' &&
+            $('#board').find('#td8').val() === 'o' ||
+            $('#board').find('#td1').val() === 'o' &&
+            $('#board').find('#td5').val() === 'o' &&
+            $('#board').find('#td9').val() === 'o' ||
+            $('#board').find('#td7').val() === 'o' &&
+            $('#board').find('#td5').val() === 'o' &&
+            $('#board').find('#td3').val() === 'o' ||
+            $('#board').find('#td3').val() === 'o' &&
+            $('#board').find('#td6').val() === 'o' &&
+            $('#board').find('#td9').val() === 'o'){
                 alert('OOO Kill Em! '+player+' wins!');
                 $('#newGame').removeClass('invisible');
         }
+
+        
 
     }
     // //left column check
@@ -145,4 +196,5 @@ $(document).ready (function() {
 // //                      [ 1, 5, 9 ],
 // //                      [ 7, 5, 3 ]
 // //                     ];
-});
+    });
+

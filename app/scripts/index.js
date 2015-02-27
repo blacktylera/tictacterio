@@ -75,7 +75,6 @@ $(document).ready (function() {
             $('#board').find('#td9').val() === 'x'){
                 alert('OOO Kill Em! '+player+' wins!');
                 location.reload();
-                $('#newGame').removeClass('invisible');
     }
         if ($('#board').find('#td1').val() === 'o' &&
             $('#board').find('#td2').val() === 'o' &&
@@ -103,7 +102,6 @@ $(document).ready (function() {
             $('#board').find('#td9').val() === 'o'){
                 alert('OOO Kill Em! '+player+' wins!');
                 location.reload();
-                $('#newGame').removeClass('invisible');
         }
 
 
@@ -111,14 +109,6 @@ $(document).ready (function() {
     }
 
 
-
-// // //FUNCTION THAT CHECK IF THE DESIRED ELEMENT SPACE IS AVAILABLE //
-// //      //call it  spaceOccupyCheck//
-// //      function spaceOccupyCheck() {
-// //          //alert player if a 'data-move type thing exists. PICK ANOTHER SPACE'
-// //          if("there's no attribute that's been attached") {
-// //            proceed with the  move, else, alert!!
-// //          }
 
 // // var possibilities = [
 // //                      [ 1, 2, 3 ],

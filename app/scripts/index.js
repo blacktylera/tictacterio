@@ -28,7 +28,6 @@ $(document).ready (function() {
         if(!$(this).html()) {
             if (turnCount % 2 === 0){
                 $(this).append(x);
-
                 $(this).val('x');
                 didYouWin('Terio 1');
                 turnCount++;
@@ -107,77 +106,9 @@ $(document).ready (function() {
                 $('#newGame').removeClass('invisible');
         }
 
-        
+
 
     }
-    // //left column check
-
-    //     if ($('#board').find('#td1').append() === $('#board').find('#td4').append()) {
-    //         if ($('#board').find('#td1').append() === $('#td7').append()) {
-    //             alert('Game over! '+player+' is the winner!');
-    //             $('#newGame').removeClass('invisible');
-    //         }
-    //     }
-    // //left diagonal check
-    //     if ($('#board').find('#td1').append() === $('#board').find('#td5').append()) {
-    //         if ($('#board').find('#td1').append() === $('#td9').append()) {
-    //             alert('Game over! '+player+' is the winner!');
-    //             $('#newGame').removeClass('invisible');
-    //         }
-    //     }
-    // //middle column check
-    // if ($('#board').find('#td2').append() !== null){
-    //     if ($('#board').find('#td2').append() === $('#board').find('#td5').append()) {
-    //         if ($('#board').find('#td2').append() === $('#td8').append()) {
-    //             alert('Game over! '+player+' is the winner!');
-    //             $('#newGame').removeClass('invisible');
-    //         }
-    //     }
-    // }
-
-    // //right column check
-    // if ($('#board').find('#td3').append() !== null){
-    //     if ($('#board').find('#td3').append() === $('#board').find('#td6').append()) {
-    //         if ($('#board').find('#td3').append() === $('#td9').append()) {
-    //             alert('Game over! '+player+' is the winner!');
-    //             $('#newGame').removeClass('invisible');
-    //         }
-    //     }
-    // }
-    //     //right diag check
-    //     if ($('#board').find('#td3').append() === $('#board').find('#td5').append()) {
-    //         if ($('#board').find('#td3').append() === $('#td7').append()) {
-    //             alert('Game over! '+player+' is the winner!');
-    //             $('#newGame').removeClass('invisible');
-    //         }
-    //     }
-    // }
-
-    // //middle row check
-
-    // if ($('#board').find('#td4').append() !== null){
-    //     if ($('#board').find('#td4').append() === $('#board').find('#td5').append()) {
-    //         if ($('#board').find('#td4').append() === $('#td6').append()) {
-    //             alert('Game over! '+player+' is the winner!');
-    //             $('#newGame').removeClass('invisible');
-    //         }
-    //     }
-    // }
-
-    // //bottom row check
-    // if ($('#board').find('#td7').append() !== null){
-    //     if ($('#board').find('#td7').append() === $('#board').find('#td8').append()) {
-    //         if ($('#board').find('#td7').append() === $('#td9').append()) {
-    //             alert('Game over! '+player+' is the winner!');
-    //             $('#newGame').removeClass('invisible');
-    //         }
-    //     }
-    // }
-
-    // $('#newGame').on('click',function(){
-    //     $('.square').append('');
-    // });
-// });
 
 
 

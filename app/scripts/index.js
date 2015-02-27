@@ -75,6 +75,7 @@ $(document).ready (function() {
             $('#board').find('#td6').val() === 'x' &&
             $('#board').find('#td9').val() === 'x'){
                 alert('OOO Kill Em! '+player+' wins!');
+                location.reload();
                 $('#newGame').removeClass('invisible');
     }
         if ($('#board').find('#td1').val() === 'o' &&
@@ -102,6 +103,7 @@ $(document).ready (function() {
             $('#board').find('#td6').val() === 'o' &&
             $('#board').find('#td9').val() === 'o'){
                 alert('OOO Kill Em! '+player+' wins!');
+                location.reload();
                 $('#newGame').removeClass('invisible');
         }
 
@@ -197,4 +199,3 @@ $(document).ready (function() {
 // //                      [ 7, 5, 3 ]
 // //                     ];
     });
-
